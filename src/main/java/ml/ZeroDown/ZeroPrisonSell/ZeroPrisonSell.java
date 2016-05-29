@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package me.JustinTheKoolKid.ZeroPrisonSell;
+package ml.ZeroDown.ZeroPrisonSell;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.logging.Level;
 
@@ -14,13 +13,9 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -53,7 +48,7 @@ public class ZeroPrisonSell extends JavaPlugin {
         }
         setupEconomy();
         plugin.saveDefaultConfig();
-        plugin.saveResource("lang-en.yml", true);
+        plugin.saveResource("src/main/resources/lang-en.yml", true);
         language = new File("plugins/ZeroPrisonSell/lang-" + config.getString("Language"));
         if (!language.exists()) {
             plugin.getLogger().log(Level.WARNING, "Language (lang-" + config.getString("Language") + ") doesn't exist! Switching to English!");

@@ -1,7 +1,7 @@
 name: ZeroPrisonSell
 description: A Prison Sell Plugin
 version: 1.0
-main: me.JustinTheKoolKid.ZeroPrisonSell.ZeroPrisonSell
+main: ml.ZeroDown.ZeroPrisonSell.ZeroPrisonSell
 requires: Vault
 authors:
     - ZeroDown

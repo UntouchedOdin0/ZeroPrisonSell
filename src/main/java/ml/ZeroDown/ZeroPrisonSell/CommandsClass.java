@@ -1,4 +1,4 @@
-package me.JustinTheKoolKid.ZeroPrisonSell;
+package ml.ZeroDown.ZeroPrisonSell;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
