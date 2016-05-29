@@ -41,6 +41,7 @@ public class EventsClass implements Listener {
     @EventHandler
     public void onSignChange(SignChangeEvent event) {
         Player player = event.getPlayer();
+        FileConfiguration languageconfig = YamlConfiguration.loadConfiguration(ZeroPrisonSell.language);
         if (event.getLine(0).equals("zerosell")) {
             if (player.hasPermission("zerocommandcooldown.createsign")) {
                 if (event.getLine(1) == "") {
@@ -52,8 +53,8 @@ public class EventsClass implements Listener {
                         event.getBlock().breakNaturally();
                         player.sendMessage(ZeroPrisonSell.format("invalid-shop"));
                     } else {
-                        event.setLine(0, ZeroPrisonSell.format("sign-prefix"));
-                        event.setLine(3, ZeroPrisonSell.format("right-click-me"));
+                        event.setLine(0, ChatColor.translateAlternateColorCodes('&', languageconfig.getString("sign-prefix")));
+                        event.setLine(3, ChatColor.translateAlternateColorCodes('&', languageconfig.getString("right-click-me")));
                     }
                 }
             }
