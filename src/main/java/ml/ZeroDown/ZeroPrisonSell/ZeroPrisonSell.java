@@ -100,14 +100,14 @@ public class ZeroPrisonSell extends JavaPlugin {
         String finalprice = df.format(price);
         eco.depositPlayer(player, price);
         price = 0;
-        player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
+        player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
         player.sendMessage(ChatColor.GRAY + " > " + ChatColor.AQUA + "You have sold " + ChatColor.GREEN + itemint + ChatColor.AQUA + " items to the shop!");
         itemint = 0;
         player.sendMessage("");
         player.sendMessage(ChatColor.GRAY + " > " + ChatColor.AQUA + "Your price has been multiplied by " + ChatColor.GREEN + playerconfig.getInt("multiplier") + "x");
         player.sendMessage("");
         player.sendMessage(ChatColor.GRAY + " > " + ChatColor.DARK_AQUA + ChatColor.BOLD + "You recieved " + ChatColor.GREEN + ChatColor.BOLD + "$" + finalprice);
-        player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
+        player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
     }
 
     public static Plugin getPlugin() {
