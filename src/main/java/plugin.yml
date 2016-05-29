@@ -1,0 +1,12 @@
+name: ZeroPrisonSell
+description: A Prison Sell Plugin
+version: 1.0
+main: me.JustinTheKoolKid.ZeroPrisonSell.ZeroPrisonSell
+authors:
+    - ZeroDown
+commands:
+    sell:
+        description: Sell all your blocks!
+        aliases: [sellall, s, zeroprisonsell]
+    selladmin:
+        description: Admin Command
