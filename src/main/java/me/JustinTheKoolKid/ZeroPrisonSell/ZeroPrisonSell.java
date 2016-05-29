@@ -30,10 +30,9 @@ import org.bukkit.plugin.java.JavaPlugin;
  *
  * @author justinthekoolkid
  */
-public class ZeroPrisonSell extends JavaPlugin implements Listener {
+public class ZeroPrisonSell extends JavaPlugin {
 
     private static Plugin plugin;
-    private Listener listener;
     public static File language;
     private static double price = 0;
     private static FileConfiguration config = plugin.getConfig();
@@ -43,8 +42,7 @@ public class ZeroPrisonSell extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         plugin = this;
-        listener = this;
-        Bukkit.getPluginManager().registerEvents(listener, plugin);
+        Bukkit.getPluginManager().registerEvents(new EventsClass(), plugin);
         File selldata = new File("plugins/ZeroPrisonSell/selldata");
         File playerdata = new File("plugins/ZeroPrisonSell/playerdata");
         if (!selldata.exists()) {
@@ -64,11 +62,13 @@ public class ZeroPrisonSell extends JavaPlugin implements Listener {
         } else {
             plugin.getLogger().log(Level.WARNING, "Language (lang-" + config.getString("Language") + ")");
         }
+        getCommand("sell").setExecutor(new CommandsClass());
+        getCommand("selladmin").setExecutor(new CommandsClass());
+        getCommand("listsellshops").setExecutor(new CommandsClass());
     }
 
     @Override
     public void onDisable() {
-        listener = null;
         plugin = null;
     }
 

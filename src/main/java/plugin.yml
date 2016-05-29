@@ -2,11 +2,14 @@ name: ZeroPrisonSell
 description: A Prison Sell Plugin
 version: 1.0
 main: me.JustinTheKoolKid.ZeroPrisonSell.ZeroPrisonSell
+requires: Vault
 authors:
     - ZeroDown
 commands:
     sell:
         description: Sell all your blocks!
-        aliases: [sellall, s, zeroprisonsell]
+        aliases: [sellall, zeroprisonsell]
     selladmin:
         description: Admin Command
+    listsellshops:
+        description: List Sell Shops
