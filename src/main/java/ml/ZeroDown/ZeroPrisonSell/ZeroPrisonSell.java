@@ -50,10 +50,10 @@ public class ZeroPrisonSell extends JavaPlugin {
         plugin.saveDefaultConfig();
         plugin.saveResource("lang-en.yml", true);
         config = plugin.getConfig();
-        language = new File("plugins/ZeroPrisonSell/lang-" + config.getString("Language"));
+        language = new File("plugins/ZeroPrisonSell/lang-" + config.getString("Language") + ".yml");
         if (!language.exists()) {
             plugin.getLogger().log(Level.WARNING, "Language (lang-" + config.getString("Language") + ") doesn't exist! Switching to English!");
-            language = new File("plugins/ZeroPrisonSell/lang-en.yml" + config.getString("Language"));
+            language = new File("plugins/ZeroPrisonSell/lang-en.yml");
             plugin.getLogger().log(Level.WARNING, "Language (lang-en)");
         } else {
             plugin.getLogger().log(Level.WARNING, "Language (lang-" + config.getString("Language") + ")");
