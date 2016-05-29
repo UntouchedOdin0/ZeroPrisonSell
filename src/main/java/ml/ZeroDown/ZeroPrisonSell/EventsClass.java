@@ -72,7 +72,7 @@ public class EventsClass implements Listener {
             if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
                 if (player.hasPermission("zeroprisonsell.player")) {
                     Sign sign = (Sign) event.getClickedBlock().getState();
-                    if (sign.getLine(0).equals(ChatColor.AQUA + "[" + ChatColor.GREEN + "Sell" + ChatColor.AQUA + "]") && sign.getLine(3).equals("Right Click Me!")) {
+                    if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', languageconfig.getString("sign-prefix"))) && sign.getLine(3).equals(ChatColor.translateAlternateColorCodes('&', languageconfig.getString("right-click-me")))) {
                         if (player.hasPermission("zeroprisonsell.sell." + sign.getLine(1))) {
                             ZeroPrisonSell.sellItems(sign.getLine(1), player);
                         }
