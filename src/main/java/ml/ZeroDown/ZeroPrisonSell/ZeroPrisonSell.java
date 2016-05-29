@@ -37,7 +37,6 @@ public class ZeroPrisonSell extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        config = plugin.getConfig();
         Bukkit.getPluginManager().registerEvents(new EventsClass(), plugin);
         File selldata = new File("plugins/ZeroPrisonSell/selldata");
         File playerdata = new File("plugins/ZeroPrisonSell/playerdata");
@@ -50,6 +49,7 @@ public class ZeroPrisonSell extends JavaPlugin {
         setupEconomy();
         plugin.saveDefaultConfig();
         plugin.saveResource("lang-en.yml", true);
+        config = plugin.getConfig();
         language = new File("plugins/ZeroPrisonSell/lang-" + config.getString("Language"));
         if (!language.exists()) {
             plugin.getLogger().log(Level.WARNING, "Language (lang-" + config.getString("Language") + ") doesn't exist! Switching to English!");
