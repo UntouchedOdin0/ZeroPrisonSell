@@ -42,19 +42,24 @@ public class EventsClass implements Listener {
     public void onSignChange(SignChangeEvent event) {
         Player player = event.getPlayer();
         if (event.getLine(0).equals("zerosell")) {
-            if (event.getLine(1) == "") {
-                event.getBlock().breakNaturally();
-                player.sendMessage(ZeroPrisonSell.format("invalid-shop"));
-            } else {
-                File sellfile = new File("plugins/ZeroPrisonSell/selldata/" + event.getLine(1) + ".yml");
-                if (!sellfile.exists()) {
+            if (player.hasPermission("zerocommandcooldown.createsign")) {
+                if (event.getLine(1) == "") {
                     event.getBlock().breakNaturally();
                     player.sendMessage(ZeroPrisonSell.format("invalid-shop"));
                 } else {
-                    event.setLine(0, ZeroPrisonSell.format("sign-prefix"));
-                    event.setLine(3, ZeroPrisonSell.format("right-click-me"));
+                    File sellfile = new File("plugins/ZeroPrisonSell/selldata/" + event.getLine(1) + ".yml");
+                    if (!sellfile.exists()) {
+                        event.getBlock().breakNaturally();
+                        player.sendMessage(ZeroPrisonSell.format("invalid-shop"));
+                    } else {
+                        event.setLine(0, ZeroPrisonSell.format("sign-prefix"));
+                        event.setLine(3, ZeroPrisonSell.format("right-click-me"));
+                    }
                 }
             }
+        } else {
+            event.getBlock().breakNaturally();
+            player.sendMessage(ZeroPrisonSell.format("no-permission"));
         }
     }
 
