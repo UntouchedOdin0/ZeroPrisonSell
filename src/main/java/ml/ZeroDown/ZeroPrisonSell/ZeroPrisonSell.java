@@ -49,7 +49,7 @@ public class ZeroPrisonSell extends JavaPlugin {
         }
         setupEconomy();
         plugin.saveDefaultConfig();
-        plugin.saveResource("src/main/resources/lang-en.yml", true);
+        plugin.saveResource("lang-en.yml", true);
         language = new File("plugins/ZeroPrisonSell/lang-" + config.getString("Language"));
         if (!language.exists()) {
             plugin.getLogger().log(Level.WARNING, "Language (lang-" + config.getString("Language") + ") doesn't exist! Switching to English!");
