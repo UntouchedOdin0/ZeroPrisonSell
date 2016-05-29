@@ -30,13 +30,14 @@ public class ZeroPrisonSell extends JavaPlugin {
     private static Plugin plugin;
     public static File language;
     private static double price = 0;
-    private static FileConfiguration config = plugin.getConfig();
+    private static FileConfiguration config;
     private static int itemint = 0;
     private static Economy eco;
 
     @Override
     public void onEnable() {
         plugin = this;
+        config = plugin.getConfig();
         Bukkit.getPluginManager().registerEvents(new EventsClass(), plugin);
         File selldata = new File("plugins/ZeroPrisonSell/selldata");
         File playerdata = new File("plugins/ZeroPrisonSell/playerdata");
