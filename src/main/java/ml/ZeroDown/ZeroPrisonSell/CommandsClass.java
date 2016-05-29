@@ -143,12 +143,12 @@ public class CommandsClass implements CommandExecutor {
                     } else if (args[0].equalsIgnoreCase("listitems")) {
                         File sellfile = new File("plugins/ZeroPrisonSell/selldata/" + args[1] + ".yml");
                         FileConfiguration sellconfig = YamlConfiguration.loadConfiguration(sellfile);
-                        player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
+                        player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.RESET + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
                         for (String s : sellconfig.getConfigurationSection("items").getKeys(false)) {
                             DecimalFormat df = new DecimalFormat("##,##,##,##,##,##,##0.00");
                             player.sendMessage(ChatColor.GRAY + " > " + ChatColor.AQUA + s + " - " + ChatColor.GREEN + "$" + df.format(sellconfig.getDouble("items." + s)));
                         }
-                        player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
+                        player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.RESET + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
                     } else if (args[0].equalsIgnoreCase("add")) {
                         player.sendMessage(ZeroPrisonSell.format("usage").replace("%e", " /selladmin " + args[0] + " <name> <material> <price>"));
                     } else if (args[0].equalsIgnoreCase("remove")) {

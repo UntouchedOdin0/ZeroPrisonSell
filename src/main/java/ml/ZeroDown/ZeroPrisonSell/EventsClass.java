@@ -83,12 +83,12 @@ public class EventsClass implements Listener {
                 File sellfile = new File("plugins/ZeroPrisonSell/selldata/" + sign.getLine(1) + ".yml");
                 FileConfiguration sellconfig = YamlConfiguration.loadConfiguration(sellfile);
                 if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', languageconfig.getString("sign-prefix"))) && sign.getLine(3).equals(ChatColor.translateAlternateColorCodes('&', languageconfig.getString("right-click-me")))) {
-                    player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
+                    player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.RESET + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
                     for (String s : sellconfig.getConfigurationSection("items").getKeys(false)) {
                         DecimalFormat df = new DecimalFormat("##,##,##,##,##,##,##0.00");
                         player.sendMessage(ChatColor.GRAY + " > " + ChatColor.AQUA + s + " - " + ChatColor.GREEN + "$" + df.format(sellconfig.getDouble("items." + s)));
                     }
-                    player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
+                    player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.RESET + " " + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
                 }
             }
         }
