@@ -201,8 +201,8 @@ public class CommandsClass implements CommandExecutor {
                                 player.sendMessage(ZeroPrisonSell.format("error-saving"));
                                 ZeroPrisonSell.getPlugin().getLogger().log(Level.SEVERE, ZeroPrisonSell.format("error-saving"));
                             }
-                            player.sendMessage(ZeroPrisonSell.format("added-multiplier"));
-                            target.sendMessage(ZeroPrisonSell.format("multiplier-recieved"));
+                            player.sendMessage(ZeroPrisonSell.format("added-multiplier-player"));
+                            target.sendMessage(ZeroPrisonSell.format("multiplier-recieved").replace("%e", args[2]).replace("%s", args[3]));
                             time = Integer.valueOf(args[3]) * 20;
                             Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ZeroPrisonSell.getPlugin(), new Runnable() {
                                 @Override
