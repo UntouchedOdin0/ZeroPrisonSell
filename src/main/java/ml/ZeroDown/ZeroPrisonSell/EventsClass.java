@@ -82,7 +82,7 @@ public class EventsClass implements Listener {
                 Sign sign = (Sign) event.getClickedBlock().getState();
                 File sellfile = new File("plugins/ZeroPrisonSell/selldata/" + sign.getLine(1) + ".yml");
                 FileConfiguration sellconfig = YamlConfiguration.loadConfiguration(sellfile);
-                if (sign.getLine(0).equals(ChatColor.AQUA + "[" + ChatColor.GREEN + "Sell" + ChatColor.AQUA + "]") && sign.getLine(3).equals("Right Click Me!")) {
+                if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', languageconfig.getString("sign-prefix"))) && sign.getLine(3).equals(ChatColor.translateAlternateColorCodes('&', languageconfig.getString("right-click-me")))) {
                     player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
                     for (String s : sellconfig.getConfigurationSection("items").getKeys(false)) {
                         DecimalFormat df = new DecimalFormat("##,##,##,##,##,##,##0.00");
