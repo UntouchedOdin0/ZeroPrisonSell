@@ -81,12 +81,14 @@ public class EventsClass implements Listener {
                 Sign sign = (Sign) event.getClickedBlock().getState();
                 File sellfile = new File("plugins/ZeroPrisonSell/selldata/" + sign.getLine(1) + ".yml");
                 FileConfiguration sellconfig = YamlConfiguration.loadConfiguration(sellfile);
-                player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + languageconfig.getString("prefix") + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
-                for (String s : sellconfig.getConfigurationSection("items").getKeys(false)) {
-                    DecimalFormat df = new DecimalFormat("##,##,##,##,##,##,##0.00");
-                    player.sendMessage(ChatColor.GRAY + " > " + ChatColor.AQUA + s + " - " + ChatColor.GREEN + "$" + df.format(sellconfig.getDouble("items." + s)));
+                if (sign.getLine(0).equals(ChatColor.AQUA + "[" + ChatColor.GREEN + "Sell" + ChatColor.AQUA + "]") && sign.getLine(3).equals("Right Click Me!")) {
+                    player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
+                    for (String s : sellconfig.getConfigurationSection("items").getKeys(false)) {
+                        DecimalFormat df = new DecimalFormat("##,##,##,##,##,##,##0.00");
+                        player.sendMessage(ChatColor.GRAY + " > " + ChatColor.AQUA + s + " - " + ChatColor.GREEN + "$" + df.format(sellconfig.getDouble("items." + s)));
+                    }
+                    player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + ChatColor.translateAlternateColorCodes('&', languageconfig.getString("prefix")) + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
                 }
-                player.sendMessage(ChatColor.GRAY + "" + ChatColor.STRIKETHROUGH + "---------------" + languageconfig.getString("prefix") + " " + ChatColor.GRAY + ChatColor.STRIKETHROUGH + "---------------");
             }
         }
     }
