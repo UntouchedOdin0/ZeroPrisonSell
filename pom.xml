@@ -20,6 +20,11 @@
             <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
         </repository>
 
+        <repository>
+            <id>inventive-repo</id>
+            <url>http://repo.inventivetalent.org/content/groups/public/</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -45,11 +50,46 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.inventivetalent.update</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.inventivetalent.update</groupId>
+                                    <artifactId>spigot</artifactId>
+                                    <version>1.0.1</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class,**/*.xml</includes>
+                                    <excludes>**/*test.class</excludes>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

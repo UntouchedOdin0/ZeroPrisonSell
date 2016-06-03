@@ -43,7 +43,7 @@ public class EventsClass implements Listener {
         Player player = event.getPlayer();
         FileConfiguration languageconfig = YamlConfiguration.loadConfiguration(ZeroPrisonSell.language);
         if (event.getLine(0).equals("zerosell")) {
-            if (player.hasPermission("zerocommandcooldown.createsign")) {
+            if (player.hasPermission("zeroprisonsell.createsign")) {
                 if (event.getLine(1) == "") {
                     event.getBlock().breakNaturally();
                     player.sendMessage(ZeroPrisonSell.format("invalid-shop"));

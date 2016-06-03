@@ -6,6 +6,7 @@
 package ml.ZeroDown.ZeroPrisonSell;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.logging.Level;
 
@@ -20,6 +21,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.inventivetalent.update.spigot.SpigotUpdater;
 
 /**
  *
@@ -61,6 +63,13 @@ public class ZeroPrisonSell extends JavaPlugin {
         getCommand("sell").setExecutor(new CommandsClass());
         getCommand("selladmin").setExecutor(new CommandsClass());
         getCommand("listsellshops").setExecutor(new CommandsClass());
+        if (config.getBoolean("Update Messages") == true) {
+            try {
+                new SpigotUpdater(plugin, 23840);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override

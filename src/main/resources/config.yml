@@ -3,3 +3,6 @@
 
 # Change this if you have another language file. Example is if I have lang-xx.yml, I would use xx below.
 Language: en
+
+# If you want to enable console update messages if theres an update available
+Update Messages: true
