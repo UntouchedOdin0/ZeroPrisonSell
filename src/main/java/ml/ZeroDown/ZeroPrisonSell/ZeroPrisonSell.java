@@ -63,7 +63,7 @@ public class ZeroPrisonSell extends JavaPlugin {
         getCommand("sell").setExecutor(new CommandsClass());
         getCommand("selladmin").setExecutor(new CommandsClass());
         getCommand("listsellshops").setExecutor(new CommandsClass());
-        if (config.getBoolean("Update Messages") == true) {
+        if (config.getBoolean("Update-Messages") == true) {
             try {
                 new SpigotUpdater(plugin, 23957);
             } catch (IOException e) {
